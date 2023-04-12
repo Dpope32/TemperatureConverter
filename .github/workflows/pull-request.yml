@@ -15,7 +15,7 @@ jobs:
     - name: Set up JDK
       uses: actions/setup-java@v2
       with:
-        java-version: '12'
+        java-version: '11'
         distribution: 'temurin'
         cache: gradle
     - name: Build with Maven
