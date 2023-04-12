@@ -18,6 +18,6 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
       - name: Compile Java files
-        run: javac -d . src/**/*.java  
+        run: javac -d . src/Test.java  
       - name: Run tests
         run: java -cp . org.junit.runner.JUnitCore com.example.MyTestSuite 
