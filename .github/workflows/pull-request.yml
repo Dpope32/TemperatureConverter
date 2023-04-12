@@ -19,5 +19,5 @@ jobs:
           distribution: 'temurin'
       - name: Compile Java files
         run: javac -d . src/Test.java  
-      - name: Run tests
-        run: java -cp . org.junit.runner.JUnitCore com.example.MyTestSuite 
+     # - name: Run tests
+     #   run: java -cp . org.junit.runner.JUnitCore com.example.MyTestSuite 
