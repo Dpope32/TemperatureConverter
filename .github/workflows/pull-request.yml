@@ -6,18 +6,18 @@ on:
       - main
 
 jobs:
-  build-and-test:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Set up JDK
-      uses: actions/setup-java@v2
-      with:
-        java-version: '11'
-        distribution: 'temurin'
-    - name: Build with Maven
-      run: mvn clean package --batch-mode --no-transfer-progress
-    - name: Run tests
-      run: mvn test --batch-mode --no-transfer-progress
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+      - name: Compile Java files
+        run: javac -d . src/**/*.java  # Modify this line to compile your Java files
+      - name: Run tests
+        run: java -cp . org.junit.runner.JUnitCore com.example.MyTestSuite  # Modify this line to run your unit tests
